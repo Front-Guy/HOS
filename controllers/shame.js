@@ -1,5 +1,6 @@
 const Shame = require("../models/Shame");
 const fs= require("fs");
+const e = require("express");
 
 exports.createShame = async (req, res) => {
     const shameInfos = req.body;
@@ -27,6 +28,7 @@ exports.getShames = async (req, res) => {
         const shames = await Shame.find({}).sort( {count: -1 } )
         res.status(200).json(shames)
     } catch (error) {
+        console.log(error)
         res.status(500).json({error})
     }
 };
