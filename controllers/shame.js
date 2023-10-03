@@ -11,7 +11,8 @@ exports.createShame = async (req, res) => {
         author : shameInfos.author,
         name: shameInfos.name,
         description: shameInfos.description,
-        image: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+        // image: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
+        image: BinData(0, '0A020F0B'),
         count : 0
     });
 
